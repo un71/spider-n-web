@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.vite
+.vscode
+.idea
+*.log
+*.cache
+*.tmp
+*.bak
+*.swp
+*.lock
