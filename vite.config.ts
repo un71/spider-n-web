@@ -1,4 +1,5 @@
 import tailwindcss from "@tailwindcss/vite";
+import { resolve } from "path";
 import { defineConfig } from "vite";
 
 const PORT = 8000;
@@ -7,6 +8,27 @@ export default defineConfig({
   plugins: [tailwindcss()],
   build: {
     outDir: "build",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        "komplektaciya-boksa-petelnogo-oruzhiya": resolve(
+          __dirname,
+          "komplektaciya-boksa-petelnogo-oruzhiya.html",
+        ),
+        "kreplenie-dlya-remnya": resolve(
+          __dirname,
+          "kreplenie-dlya-remnya.html",
+        ),
+        "process-sborki-rabochey-golovy": resolve(
+          __dirname,
+          "process-sborki-rabochey-golovy.html",
+        ),
+        "process-sborki-setkometa": resolve(
+          __dirname,
+          "process-sborki-setkometa.html",
+        ),
+      },
+    },
   },
   server: {
     port: PORT,
