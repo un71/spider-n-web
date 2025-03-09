@@ -1,11 +1,17 @@
 import tailwindcss from "@tailwindcss/vite";
 import { resolve } from "path";
 import { defineConfig } from "vite";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 const PORT = 8000;
 
 export default defineConfig({
-  plugins: [tailwindcss()],
+  plugins: [
+    tailwindcss(),
+    createHtmlPlugin({
+      minify: true,
+    }),
+  ],
   build: {
     outDir: "build",
     rollupOptions: {
